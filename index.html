@@ -938,5 +938,22 @@
 <head><bgsound src="music https://music.163.com/song?id=1877029917&userid=432281089" loop="-1"></head>
   
 
-</body><div id="night-mask" style="position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: 2147483647;pointer-events: none;mix-blend-mode: multiply;transition: opacity 0.1s ease 0s;opacity:0.3;display:none;background: #000000;"></div></html>
+</body><div id="night-mask" style="position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: 2147483647;pointer-events: none;mix-blend-mode: multiply;transition: opacity 0.1s ease 0s;opacity:0.3;display:none;background: #000000;">
+      
+ <audio id="music" autoplay="true" loop controls preload src="https://music.163.com/song?id=27538345&userid=432281089"></audio>
+  <script>
+   function audioAutoPlay(id){
+   　　var audio = document.getElementById(id),
+   　　　　play = function(){
+   　　　　　　audio.play();
+   　　　　　　document.removeEventListener("touchstart",play, false);
+   　　　　};
+   　　audio.play();
+   　　document.addEventListener("WeixinJSBridgeReady", function () {//微信
+   　　　　play();
+   　　}, false);
+   　　document.addEventListener("touchstart",play, false);
+   }
+  audioAutoPlay('music');
+  </script></div></html>
 
